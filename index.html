@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Reza Goldoust">
+  <meta name="description" content="https://scholar.google.com/citations?user=xqYHfiIAAAAJ&hl=en">
+  <title>محاسبه گر پژوهانه</title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout-rtl/"> -->
+
+
+
+
+
+  <link href="css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="css/printable-page.css" rel="stylesheet" media="print">
+
+
+  <link rel="icon" href="img\Shahed_University.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img\Shahed_University.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="img\Shahed_University.png">
+  <meta name="theme-color" content="#712cf9">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+  </style>
+
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/qrcode.min.js"></script>
+
+  <script>
+
+    function printDiv(file_name) {
+      var printContents = document.getElementById("printableArea").innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      document.title = file_name;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+    }
+
+
+  </script>
+</head>
+
+<body class="bg-light">
+
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="img\Shahed_University.png" alt="" width="85" height="100">
+        <h5>معاونت پژوهش و فناوری دانشگاه شاهد</h5>
+        <h4> محاسبه گر پژوهانه اعضای هیئت علمی دانشگاه شاهد - سال 1402 </h4>
+        <p class="lead">برای مطالعه جزئیات دستورالعمل به لینک زیر مراجعه فرمایید.</p>
+
+        
+        <li class="list-inline-item"><a href="img/402-Grant-Guide.pdf" target="_blank">
+            <h5>راهنمای پژوهانه</h5>
+          </a></li>
+          <p class="lead">ترجیحا از سیستم های
+             <u>دسکتاپ</u>
+              و از مروگرهای 
+              <u>فایرفاکس یا کروم</u>
+               برای نمایش بهتر استفاده نمایید.</p>
+        <strong>
+          <p>لطفا بعد از وارد کردن ورودی ها کلید Enter را فشار دهید.</p>
+        </strong>
+        
+        <p class="lead">تاریخ بروز رسانی: 1402/07/25</p>
+      </div>
+      <hr>
+
+      <div id="calculator" class="row g-3 visible">
+        <div class="col-md-5 col-lg-6 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">خروجی</span>
+          </h4>
+          <ul class="list-group mb-3">
+            
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">حالت انتخابی:</h6>
+                <small class="text-muted"> </small>
+              </div>
+              <strong><span id="state_result" class="text-success">پ</span></strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">درصد تبدیل (%):</span></h6>
+                <small class="text-muted"> </small>
+              </div>
+              <strong><span id="percent_result_value" class="text-danger">25</span></strong>
+
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">امتیاز پژوهشی:</h6>
+                <small class="text-muted"> </small>
+              </div>
+              <strong><span id="research_score_result" class="text-danger">30</span></strong>
+
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">میزان حق التحقیق (سرفصل الف میلیون تومان):</h6>
+                <small class="text-muted"> </small>
+              </div>
+              <strong><span id="personnel_grant" class="text-primary">30</span></strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">میزان اسنادی (سرفصل ب میلیون تومان):</h6>
+                <small class="text-muted"> </small>
+              </div>
+              <strong><span id="non_personnel_grant" class="text-primary">30.55</span></strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">مبلغ کل پژوهانه (میلیون تومان):</h6>
+                <small class="text-muted"> </small>
+              </div>
+              <strong><span id="total_grant" class="text-primary">30.33</span></strong>
+            </li>
+
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <button id="letter" class="w-100 btn btn-primary btn-lg" type="button">محاسبه</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-7 col-lg-6">
+          <h4 class="mb-3">ورودی‌</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">حالت:</span>
+                <select id="state" class="form-select" aria-label="Default select example">
+                  <option value="1" selected>پژوهانه پایه</option>
+                  <option value="2">اعتبار اسنادی افزایش یافته (سرفصل الف به ب)</option>
+                  <option value="3">حق التحقیق افزایش یافته (سرفصل ب به الف)</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">مبلغ ثابت پژوهانه (A):</span>
+                <input id="AA" type="text" class="form-control" value="0" disabled>
+                <span class="input-group-text">میلیون تومان</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">ضریب (B):</span>
+                <input id="BB" type="text" class="form-control" value="0" disabled>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">امتیاز پژوهشی (K):</span>
+                <input id="research_score" type="text" class="form-control" value="0">
+                <!-- <span class="input-group-text">امتیاز</span> -->
+              </div>
+
+              <div class="input-group mb-3">
+                <span id="percent_title" class="input-group-text">میزان تبدیل:</span>
+                <input id="percent" type="text" class="form-control" value="15">
+                <span class="input-group-text">درصد</span>
+              </div>
+
+
+
+
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <hr class="my-4">
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2023 معاونت پژوهش و فناوری دانشگاه شاهد</p>
+      <small>
+        <p class="mb-1">ایده: دکتر رهبرپور</p>
+      </small>
+      <small>
+        <p class="mb-1">طراحی و اجرا: رضا گل دوست سلوط</p>
+      </small>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#"></a></li>
+        <li class="list-inline-item"><a href="#"></a></li>
+        <li class="list-inline-item"><a href="#"></a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!-- <script src="../checkout/form-validation.js"></script> -->
+  <script src="js/d3.v4.js"></script>
+  <!-- <script src="js\JsBarcode.all.min.js"></script> -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
