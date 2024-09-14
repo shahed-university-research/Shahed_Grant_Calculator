@@ -36,7 +36,7 @@ var qrcode
 var qrcode_text
 
 var A = 5
-var B = 0.8
+var B = 2
 var research_score = 0
 var percent = 0
 
